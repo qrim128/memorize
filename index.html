@@ -1,20 +1,3 @@
-<!-- 
--- Glitch Minigames
--- Copyright (C) 2024 Glitch
--- 
--- This program is free software: you can redistribute it and/or modify
--- it under the terms of the GNU General Public License as published by
--- the Free Software Foundation, either version 3 of the License, or
--- (at your option) any later version.
--- 
--- This program is distributed in the hope that it will be useful,
--- but WITHOUT ANY WARRANTY; without even the implied warranty of
--- MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
--- GNU General Public License for more details.
--- 
--- You should have received a copy of the GNU General Public License
--- along with this program. If not, see <https://www.gnu.org/licenses/>. -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,29 +10,29 @@
 
         :root {
             /* Themeable colors */
-            --primary-color: #2dd4a8;
-            --secondary-color: #1a8c6f;
-            --success-color: #2dd4a8;
+            --primary-color: #dfb33b;
+            --secondary-color: #b08d2d;
+            --success-color: #dfb33b;
             --failure-color: #ff4444;
-            --warning-color: #fbbf24;
-            --background-color: #1e1e1e;
-            --background-gradient-1: #0f1e2d;
-            --background-gradient-2: #1e3c5a;
-            --background-secondary: #001428;
-            --background-tertiary: #002038;
-            --border-color: #505050;
-            --text-color: #e0e0e0;
-            --text-secondary-color: #969696;
+            --warning-color: #dfb33b;
+            --background-color: #181a17;
+            --background-gradient-1: #181a17;
+            --background-gradient-2: #232520;
+            --background-secondary: #0c0d0c;
+            --background-tertiary: #131412;
+            --border-color: #3e413a;
+            --text-color: #e7e3cb;
+            --text-secondary-color: #8a897e;
             --danger-color: #cc0000;
-            --safe-color: #22c55e;
+            --safe-color: #dfb33b;
             --background-opacity: 0.95;
-            --background-gradient-1-alpha: rgba(15, 30, 45, 0.95);
-            --background-gradient-2-alpha: rgba(30, 60, 90, 0.95);
-            --background-secondary-alpha: rgba(0, 20, 40, 0.95);
-            --background-tertiary-alpha: rgba(0, 32, 56, 0.95);
+            --background-gradient-1-alpha: rgba(24, 26, 23, 0.95);
+            --background-gradient-2-alpha: rgba(35, 37, 32, 0.95);
+            --background-secondary-alpha: rgba(12, 13, 12, 0.95);
+            --background-tertiary-alpha: rgba(19, 20, 18, 0.95);
             
             /* Minigame specific colors */
-            --minigame-color-1: #273cfcff;
+            --minigame-color-1: #dfb33bff;
             --minigame-color-2: #2add57ff;
             --minigame-color-3: #28e757ff;
             --minigame-color-4: #edeb64ff;
@@ -61,14 +44,14 @@
             --dark-blue: var(--background-gradient-1);
             --dark-bg: var(--background-gradient-1);
             --safe-zone: var(--safe-color);
-            --glow: rgba(45, 212, 168, 0.7);
+            --glow: rgba(223, 179, 59, 0.7);
             --glow-color: var(--primary-color);
             --background: var(--background-color);
             --text: var(--text-color);
         }
 
         html, body {
-            background: #11141a !important;
+            background: #111210 !important;
             font-family: 'Share Tech Mono', monospace;
             height: 100vh;
             margin: 0;
@@ -88,12 +71,12 @@
 
         /* Web Interface Setup Panel - Centered Layout */
         .standalone-control-deck {
-            background: rgba(0, 20, 40, 0.9);
+            background: rgba(12, 13, 12, 0.9);
             border: 1px solid var(--primary-color);
             padding: 25px;
             border-radius: 8px;
             width: 500px;
-            box-shadow: 0 0 25px rgba(45, 212, 168, 0.25);
+            box-shadow: 0 0 25px rgba(223, 179, 59, 0.25);
             z-index: 9999;
             transition: opacity 0.3s ease;
         }
@@ -104,7 +87,7 @@
             margin-bottom: 20px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            border-bottom: 1px dashed rgba(45, 212, 168, 0.3);
+            border-bottom: 1px dashed rgba(223, 179, 59, 0.3);
             padding-bottom: 8px;
             text-align: center;
         }
@@ -139,7 +122,7 @@
         .setting-item input:focus {
             border-color: var(--primary-color);
             outline: none;
-            box-shadow: 0 0 5px rgba(45, 212, 168, 0.3);
+            box-shadow: 0 0 5px rgba(223, 179, 59, 0.3);
         }
         .launch-btn-container {
             text-align: center;
@@ -169,23 +152,23 @@
         /* Memory Game Container */
         #memory-container {
             background: linear-gradient(135deg, var(--background-gradient-1-alpha) 0%, var(--background-gradient-2-alpha) 100%);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             border-radius: 12px;
             width: 600px;
             padding: 20px;
-            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.2);
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.6), inset 0 1px 1px rgba(255, 255, 255, 0.1);
             display: none;
         }
 
         .memory-display {
             position: relative;
             height: 450px;
-            background: rgba(0, 0, 0, 0.25);
+            background: rgba(0, 0, 0, 0.35);
             border-radius: 8px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
             overflow: hidden;
             margin-bottom: 20px;
-            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.3);
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -221,7 +204,7 @@
             color: var(--warning-color);
             font-weight: bold;
             letter-spacing: 3px;
-            text-shadow: 0 0 15px rgba(251, 191, 36, 0.6);
+            text-shadow: 0 0 15px rgba(223, 179, 59, 0.6);
             margin-top: 15px;
             display: none;
         }
@@ -235,8 +218,8 @@
         }
 
         .memory-square {
-            background: rgba(0, 40, 80, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.2);
+            background: #15242d;
+            border: 2px solid #3c4e57;
             border-radius: 8px;
             cursor: pointer;
             display: flex;
@@ -256,7 +239,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.1) 50%, transparent 70%);
+            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.05) 50%, transparent 70%);
             transform: translateX(-100%);
             transition: transform 0.6s;
         }
@@ -266,8 +249,8 @@
         }
 
         .memory-square:hover {
-            border-color: rgba(255, 255, 255, 0.4);
-            background: rgba(0, 60, 120, 0.5);
+            border-color: rgba(223, 179, 59, 0.4);
+            background: #1b2f3b;
             transform: scale(1.02);
         }
 
@@ -279,15 +262,15 @@
         }
 
         .memory-square.player-selected {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.05);
             border-color: var(--light-blue);
             box-shadow: 0 0 10px var(--glow);
         }
 
         .memory-square.correct {
             background: linear-gradient(135deg, var(--success-color), var(--safe-color)) !important;
-            border-color: var(--success-color);
-            box-shadow: 0 0 20px rgba(0, 255, 0, 0.7) !important;
+            border-color: #fff;
+            box-shadow: 0 0 20px rgba(223, 179, 59, 0.8) !important;
             animation: correctPulse 0.6s ease-in-out;
         }
 
@@ -298,40 +281,75 @@
             animation: wrongShake 0.6s ease-in-out;
         }
 
+        /* High-Visibility Bottom Status Display Panel */
+        .hack-info {
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.35) !important; /* Solid dark background to contrast against text */
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 6px;
+            padding: 12px 15px;
+            margin: 15px auto;
+            width: 600px; /* Perfectly matches the width of the memory-grid */
+            box-sizing: border-box;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.5);
+        }
+
+        .counter {
+            font-size: 15px;
+            font-weight: bold;
+            color: var(--primary-color) !important; /* Forces the golden yellow color */
+            letter-spacing: 1px;
+            border-right: 1px solid #3e413a;
+            padding-right: 15px;
+            margin-right: 15px;
+            white-space: nowrap;
+            text-transform: uppercase;
+        }
+
+        .message {
+            flex-grow: 1;
+            font-size: 14px;
+            color: #e7e3cb !important; /* High contrast off-white text */
+            letter-spacing: 0.5px;
+            text-align: left;
+            font-weight: normal;
+        }
+
+        /* Timer Bar Container Position Adjustments */
         .timer-container {
             position: relative;
-            height: 20px;
-            background: rgba(0, 0, 0, 0.4);
+            height: 10px;
+            background: rgba(0, 0, 0, 0.5);
             border-radius: 4px;
             overflow: hidden;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin: 0 auto 8px auto;
+            width: 600px; /* Sized to align perfectly below the status bar */
+            box-sizing: border-box;
         }
 
         .memory-timer-progress {
             height: 100%;
-            background: linear-gradient(to right, var(--light-blue), var(--neon-blue));
+            background: var(--primary-color);
             width: 100%;
             transition: width 0.1s linear;
-            box-shadow: 0 0 10px var(--glow);
         }
         
         .memory-timer-progress.input-phase-color {
-            background: linear-gradient(to right, var(--warning-color), #f59e0b) !important;
-            box-shadow: 0 0 10px rgba(245, 158, 11, 0.7) !important;
+            background: var(--primary-color) !important;
         }
 
-        .timer-text {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+        /* Centered timer details layout directly under the bar */
+        .timer-text-container {
             display: flex;
-            align-items: center;
             justify-content: center;
-            font-size: 12px;
-            color: #fff;
-            text-shadow: 1px 1px 2px #000;
+            align-items: center;
+            width: 100%;
+            font-size: 16px;
+            color: #ffffff;
+            letter-spacing: 1px;
+            margin-top: 2px;
         }
 
         .hack-title h2 {
@@ -363,9 +381,9 @@
         }
 
         @keyframes correctPulse {
-            0% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); }
-            50% { transform: scale(1.15); box-shadow: 0 0 40px rgba(0, 255, 0, 0.9); }
-            100% { transform: scale(1); box-shadow: 0 0 20px rgba(0, 255, 0, 0.7); }
+            0% { transform: scale(1); box-shadow: 0 0 20px rgba(223, 179, 59, 0.8); }
+            50% { transform: scale(1.15); box-shadow: 0 0 40px rgba(223, 179, 59, 1); }
+            100% { transform: scale(1); box-shadow: 0 0 20px rgba(223, 179, 59, 0.8); }
         }
 
         @keyframes wrongShake {
@@ -424,23 +442,27 @@
             <div class="memory-grid"></div>
         </div>
 
+        <!-- Custom Row Container enclosing Round tracking & Info message -->
         <div class="hack-info">
             <div class="counter">ROUND: <span id="memory-round-current">1</span>/<span id="memory-round-total">3</span></div>
-            <div class="message"><span id="memory-message">Calibrating system...</span></div>
+            <div class="message"><span id="memory-message">🧠 Memorize the pattern! (Wrong presses: 0/1)</span></div>
         </div>
         
+        <!-- Horizontally tracked layout setup below info block matching screenshot layout -->
         <div class="timer-container">
             <div class="memory-timer-progress"></div>
-            <div class="timer-text">Time: <span id="memory-timer">3.0</span>s</div>
+        </div>
+        <div class="timer-text-container">
+            Time: <span id="memory-timer">3.0</span>s
         </div>
     </div>    
 
-    <!-- Audio Placeholders -->
+    <!-- Native HTML5 MP3 Audio Assets -->
     <div class="audio-elements" style="display: none;">
-        <audio id="sound-click" preload="auto"><source src="" type="audio/mpeg"></audio>
-        <audio id="sound-success" preload="auto"><source src="" type="audio/mpeg"></audio>
-        <audio id="sound-failure" preload="auto"><source src="" type="audio/mpeg"></audio>
-        <audio id="sound-buttonPress" preload="auto"><source src="" type="audio/mpeg"></audio>
+        <audio id="sound-click" preload="auto"><source src="click.mp3" type="audio/mpeg"></audio>
+        <audio id="sound-success" preload="auto"><source src="success.mp3" type="audio/mpeg"></audio>
+        <audio id="sound-failure" preload="auto"><source src="failure.mp3" type="audio/mpeg"></audio>
+        <audio id="sound-buttonPress" preload="auto"><source src="buttonPress.mp3" type="audio/mpeg"></audio>
     </div>
 
     <script>
@@ -450,7 +472,7 @@
                 squareCount: 8,
                 rounds: 3,
                 showTime: 3000,
-                maxWrongPresses: 3,
+                maxWrongPresses: 1,
                 inputTime: 5000
             },
             currentRound: 0,
@@ -465,13 +487,14 @@
         };
 
         function launchWithMenuSettings() {
+            
             const runtimeConfig = {
                 gridSize: parseInt($('#cfg-grid-size').val()) || 5,
                 squareCount: parseInt($('#cfg-square-count').val()) || 8,
                 rounds: parseInt($('#cfg-rounds').val()) || 3,
                 showTime: parseInt($('#cfg-show-time').val()) || 3000,
                 inputTime: parseInt($('#cfg-input-time').val()) || 5000,
-                maxWrongPresses: parseInt($('#cfg-max-wrong').val()) || 3
+                maxWrongPresses: parseInt($('#cfg-max-wrong').val()) || 1
             };
             
             $('#control-deck').hide();
@@ -520,25 +543,21 @@
         function runMemorizePhaseCountdown(seconds, callback) {
             $('#splash-status').hide();
             const $countdown = $('#phase-countdown');
-            $countdown.text(`MEMORIZE PHASE IN ${seconds}...`).show();
-            playMemorySound('click');
+            $countdown.text("PREPARING MEMORY MATRIX...").show();
 
-            const interval = setInterval(() => {
-                seconds--;
-                if (seconds > 0) {
-                    $countdown.text(`MEMORIZE PHASE IN ${seconds}...`);
-                    playMemorySound('click');
-                } else {
-                    clearInterval(interval);
-                    callback();
-                }
-            }, 1000);
+            setTimeout(() => {
+                callback();
+            }, seconds * 1000);
         }
 
         function updateMemoryUI() {
             $('#memory-round-current').text(memoryGameState.currentRound + 1);
             $('#memory-round-total').text(memoryGameState.config.rounds);
-            $('#memory-message').text(`System Ready (Mistakes: ${memoryGameState.wrongPresses}/${memoryGameState.config.maxWrongPresses})`);
+            if (memoryGameState.showingPattern) {
+                $('#memory-message').text(`🧠 Memorize the pattern! (Wrong presses: ${memoryGameState.wrongPresses}/${memoryGameState.config.maxWrongPresses})`);
+            } else {
+                $('#memory-message').text(`System Active (Wrong presses: ${memoryGameState.wrongPresses}/${memoryGameState.config.maxWrongPresses})`);
+            }
         }
 
         function initializeMemoryGrid() {
@@ -578,7 +597,6 @@
             memoryGameState.playerSelected = [];
             
             $('.memory-square').removeClass('lit player-selected correct wrong');
-            $('.memory-timer-progress').removeClass('input-phase-color');
             
             const totalSquares = memoryGameState.config.gridSize * memoryGameState.config.gridSize;
             const squareCount = Math.min(memoryGameState.config.squareCount, totalSquares);
@@ -596,7 +614,7 @@
             memoryGameState.selectedSquares.forEach(index => {
                 $(`.memory-square[data-index="${index}"]`).addClass('lit');
             });
-            $('#memory-message').text(`MEMORIZE PHASE ACTIVE: Note the lit array pattern.`);
+            updateMemoryUI();
             
             let remainingTime = memoryGameState.config.showTime;
             updateMemoryTimer(remainingTime, memoryGameState.config.showTime);
@@ -628,10 +646,9 @@
             memoryGameState.showingPattern = false;
             memoryGameState.gameActive = true;
             $('.memory-square').removeClass('lit');
-            $('.memory-timer-progress').addClass('input-phase-color');
             
             const displaySecs = (memoryGameState.config.inputTime / 1000).toFixed(1);
-            $('#memory-message').text(`INPUT PHASE ACTIVE: Select items within ${displaySecs} seconds!`);
+            $('#memory-message').text(`Click the squares that were lit up (Wrong presses: ${memoryGameState.wrongPresses}/${memoryGameState.config.maxWrongPresses})`);
             
             if (memoryGameState.timerInterval) {
                 clearInterval(memoryGameState.timerInterval);
@@ -668,16 +685,16 @@
             memoryGameState.playerSelected.push(squareIndex);
             $(this).addClass('player-selected');
             
-            playMemorySound('click');
             if (memoryGameState.selectedSquares.includes(squareIndex)) {
                 $(this).addClass('correct');
+                playMemorySound('click');
                 console.log('Correct square selected');
             } else {
                 $(this).addClass('wrong');
                 console.log('Wrong square selected');
                 memoryGameState.wrongPresses++;
                 
-                $('#memory-message').text(`Incorrect selection! (${memoryGameState.wrongPresses}/${memoryGameState.config.maxWrongPresses})`);
+                updateMemoryUI();
                 
                 if (memoryGameState.wrongPresses >= memoryGameState.config.maxWrongPresses) {
                     endMemoryGame(false);
@@ -759,7 +776,6 @@
                     });
                 } else {
                     console.log('Memory game result simulated successfully online:', success);
-                    // Alerts/Modals removed entirely. Proceeding directly to settings menu.
                 }
             }, 2000);
         }
@@ -777,16 +793,18 @@
                     case 'failure':
                         audio = document.getElementById('sound-failure');
                         break;
-                    default:
+                    case 'buttonPress':
                         audio = document.getElementById('sound-buttonPress');
+                        break;
                 }
                 
-                if (audio && audio.src && audio.src !== window.location.href) {
+                if (audio) {
                     audio.currentTime = 0;
-                    audio.play().catch(e => console.log('Audio play failed:', e));
+                    audio.volume = 0.35; 
+                    audio.play().catch(e => console.log('Audio playback waiting for manual focus layer:', e));
                 }
             } catch (e) {
-                console.log('Error playing sound:', e);
+                console.log('Error playing MP3 asset:', e);
             }
         }
 
